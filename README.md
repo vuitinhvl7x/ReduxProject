@@ -1,0 +1,1 @@
+#   MORE IN THIS [link](https://github.com/vuitinhvl7x/ReduxProject/tree/master/note)
