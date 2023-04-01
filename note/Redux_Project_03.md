@@ -14,9 +14,9 @@
     <Formik
       initialValues={initialValues}
     >
-    // bên trong là callback 
+      // bên trong là 1 callback
       {formikProps => {
-        // do something here ...
+    
         const { values, errors, touched } = formikProps; 
         console.log({ values, errors, touched });
 
@@ -69,7 +69,7 @@ import React from 'react';
 import { FormGroup, Input, Label } from 'reactstrap';
 
 InputField.propTypes = {
-    // Props được truyền thêm từ Lib
+    // Props được truyền thêm từ Formik
   field: PropTypes.object.isRequired,
   form: PropTypes.object.isRequired,
 
@@ -98,7 +98,7 @@ function InputField(props) {
 
   return (
     <FormGroup>
-        // ô có label hoặc không có
+    //  ô có label hoặc không có
       {label && <Label for={name}>{label}</Label>}
 
       <Input
@@ -115,3 +115,14 @@ function InputField(props) {
 
 export default InputField;        
  ```
+
+
+ - Chốt lại:
+    -   Câu nối giữa UI control và Formik.
+ 
+    -   UI control là một controlled component với props:
+        -   name: tên xác định control
+        -   value: giá trị của control
+        -   onChange: trigger hàm này với giá trị mới khi có thay đổi
+        -   onBlur: xác định khi nào thi control này bị touched
+    
